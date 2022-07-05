@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType3.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <script>
+        /*
+            한 명의 회원 정보라고 가정해서 번호, 이름, 성별 여부(여자는 true, 남자는 false) 나열
+            1, 정다정, true
+        */
+
+        let num=1; //number type
+        let name="정다정"; //string type
+        let isWoman=true; //boolean type
+
+        //하나의 변수명으로 여러 개의 값을 한 번에 관리하려면,,
+        let mem1={num:1, name:"정다정", isWoman:true};  //{}중괄호 이거슨 object type
+        let mem2={num:1, name:"정다정", isWoman:true};
+        let mem3={num:num, name:name, isWoman:isWoman};
+        let mem4={num,name,isWoman}; // mem3 object type을 간단히 이렇게 작성할 수 있음
+
+        //변수에 대입하려면 let 변수명={key:value, key2:value2};
+
+        //참조하려면 mem1.num > 변수명과 .과 key값 함께 검색
+
+        //a는 object type
+        let a=mem1; //mem1에 있는 object type값을 a에 대입
+        //b는 number type
+        let b=mem1.num;
+        //c는 string type
+        let c=mem1.name;
+        //d는 boolean type
+        let d=mem1.isWoman;
+
+        //object에 저장된 값을 수정해보기 (페이지 로딩시에 수정된다.)
+        mem2.num=2;
+        mem2.name="골골"
+        mem2.isWoman=false;
+        
+        //빈 object를 만들고 나중에 필요에 따라 방을 추가할 수 있다.
+        let mem5={};
+        mem5.num=3;
+        mem5.name="하오";
+        mem5.isWoman=true;
+
+        
+
+
+    </script>
+</body>
+</html>
