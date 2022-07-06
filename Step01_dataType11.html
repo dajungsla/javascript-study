@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType11.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button onclick="remove()">삭제</button>
+    <button onclick="input()">입력버튼</button>
+    <button onclick="print()">입력 받은 내용</button>
+    <script>
+        function remove(){
+            let isDelete=confirm("삭제할까요?");
+            if(isDelete){
+                alert("삭제했다");
+                console.log("삭제 합니다.");
+            //if문은 괄호 안의 내용이 true값이면 아래의 명령어를 수행    
+            };
+        };
+
+        //함수내에서 msg라는 변수를 선언하지말고, 페이지 로딩시점인 global영역에 변수를 선언한다.
+        let msg;
+
+        function input(){
+            msg=prompt("메세지를 입력하세요~!")
+        };
+
+        let a=msg;
+
+        function print(){
+            //global영역에 만들어진 변수의 값을 참조하여 작업을 한다.
+            console.log(msg);
+        };
+    </script>
+</body>
+</html>

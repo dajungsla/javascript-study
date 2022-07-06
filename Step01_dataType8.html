@@ -21,14 +21,14 @@
 
 
         //원숭이를 냉장고에 밀어넣는 함수
-        let pushMonkey=()=>{
+        let pushMonkey=function(){
             console.log("냉장고 문을 열어요");
             console.log("원숭이를 넣어요");
             console.log("냉장고 문을 닫아요");
         };
 
         //function(){};은 ()=>{};로 바꿔쓸 수 있다.
-        let getFortune=()=>{
+        let getFortune=function(){
             //어떤 복잡한 과정을 통해서 오늘의 운세를 얻어왔다고 가정하자
             let fortune="동쪽으로 가면 귀인을 만나요";
             //return이라는 예약어를 통해서 string type데이터를 함수를 호출한 그 위치로 되돌려준다.
@@ -37,14 +37,19 @@
 
         //원숭이를 냉장고에 넣기
         pushMonkey();
-
+        
         //오늘의 운세를 받아와서 fortuneToday라는 변수에 담기
         let fortuneToday=getFortune();
         // fortuneToday(); 은 리턴값을 받은 상수라서 함수 실행 안댐
-       
-        let b=function fortuneToday(){
-            console.log(b);
+        let c=function(fortuneToday){
+            console.log(fortuneToday);
         };
+        c();
+
+        let b=function fortuneToday(){
+            console.log("동쪽귀인출력");
+        };
+        
         b();
 
         console.log("javascript의 로딩이 종료됩니다.");
