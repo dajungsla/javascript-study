@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example.html</title>
+</head>
+<body>
+
+    <!--p{p입니다}*5 tab-->
+    <p id="p1">p1입니다</p>
+    <p id="p2">p2입니다</p>
+    <p>p입니다</p>
+    <p>p입니다</p>
+    <p>p입니다</p>
+
+    <!--p{p$입니다.}*5-->
+    <p class="my-class">p1입니다.</p>
+    <p class="my-class">p2입니다.</p>
+    <p class="my-class">p3입니다.</p>
+    <p class="my-class">p4입니다.</p>
+    <p class="my-class">p5입니다.</p> 
+
+    <button onclick="fnfn();">바꾸기 버튼</button>
+    
+    <script>
+        document.querySelector("p")[0].innerText="김구라";
+        /*바꾸기 버튼을 누르면 id가 p1인 요소의 
+        innerText를 "해골"로 바꾸는 프로그래밍*/
+
+        function fnfn(){
+            document.querySelector("#p1").innerText="해골";
+        };
+    </script>
+</body>
+</html>
