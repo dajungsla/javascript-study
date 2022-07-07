@@ -39,17 +39,15 @@
         pushMonkey();
 
         //오늘의 운세를 받아와서 fortuneToday라는 변수에 담기
-        let fortuneToday=getFortune();
+        let fortuneToday=getFortune;
+        fortuneToday(); //이것은 콘솔창에 포춘투데이()검색해야 출력
 
-        // fortuneToday는 getFortune함수 정보를 받음-함수정보출력
-        // fortuneToday()는 getFortune함수의 return값을 받음
-
-        function printfT(a){
-            console.log(a);
-        };
-
-        printfT(fortuneToday);
-
+        // fortuneToday변수가 getfortune;이면 getFortune함수 참조-함수정보출력
+        // getfortune()라고 쓰면 fortuneToday는 getFortune함수의 return값을 받음
+        // 또는 let fortuneToday=getFortune(); 
+        // > function test(a){console.log(a);}; 
+        // > test(fortuneToday); 는 바로 콘솔창 출력
+        
         console.log("javascript의 로딩이 종료됩니다.");
 
 

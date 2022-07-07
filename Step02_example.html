@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+</head>
+<body>
+    <button id="plusBtn">증가</button>
+    <button id="minusBtn">감소</button>
+    <p id="console">0</p>
+    <script>
+        //count라는 변수에 0 대입
+        let count=0;
+        //#plusBtn에 "click"이라는 이벤트가 일어나면 등록된 함수가 실행
+        document.querySelector("#plusBtn").addEventListener("click", function(){
+            count=count+1; //콘솔내에서 카운트값은 증가하고 있음
+            //alert("1이 증가하였습니다");
+            document.querySelector("#console").innerText=count+"입니다.";
+        });
+        document.querySelector("#minusBtn").addEventListener("click", function(){
+            count=count-1; 
+            //alert("1이 감소하였습니다");
+            document.querySelector("#console").innerText=count+"입니다.";
+        });
+
+    </script>
+</body>
+</html> 

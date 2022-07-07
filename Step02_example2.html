@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example2.html</title>
+    <style>
+    #loopy{
+        transition:all 0.5s ease-in-out; /*ease-in(출발을 부드럽게) out(은 도착을 부드럽게) linear*/
+    }
+    </style>
+
+</head>
+<body>
+    <div>
+    <button id="moveright">오른쪽</button>
+    <button id="moveleft">왼쪽</button>
+    <button id="movebottomleft">하단대각선</button>
+    <button id="origin">초기화</button>
+    <br>
+    <img src="images/images/fn.jpg" alt="근육 루피" id="loopy"></div>
+    <script>
+        /*아래의 mLeft변수를 활용하여 움직이기 버튼을 누를 때마다
+        이미지의 왼쪽 마진을 10px씩 증감시켜서 이미지가 양 옆으로 10px씩 움직이게 프로그래밍 */
+        let mLeft=0;
+        let mTop=0; //하단 대각선으로 이동을 위해
+
+        document.querySelector("#moveright").addEventListener("click", function(){
+            mLeft=mLeft+100;
+            document.querySelector("#loopy").style.marginLeft=mLeft+"px";
+
+        });
+        document.querySelector("#moveleft").addEventListener("click", function(){
+            if(mLeft!=0){
+                mLeft=mLeft-100;
+                document.querySelector("#loopy").style.marginLeft=mLeft+"px";
+            };
+        });
+
+        document.querySelector("#movebottomleft").addEventListener("click", function(){
+            mLeft=mLeft+100;
+            mTop=mTop+100;
+            document.querySelector("#loopy").style.marginLeft=mLeft+"px";
+            document.querySelector("#loopy").style.marginTop=mTop+"px";
+        });
+
+        document.querySelector("#origin").addEventListener("click", function(){
+        document.querySelector("#loopy").style.marginLeft=0;
+        document.querySelector("#loopy").style.marginTop=0;
+        });
+
+    </script>
+</body>
+</html>

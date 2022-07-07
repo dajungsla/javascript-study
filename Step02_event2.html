@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_event2.html</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <div style="width:200px; height:200px;border:2px solid greenyellow;">box2</div>
+    <div id="myDiv">box3</div>
+    <div id="yourDiv">box4</div>
+    <script>
+        //id가 myDiv인 요소의 참조값을 찾아와서 div1 이라는 변수에 담아놓기
+        let div1=document.querySelector("#myDiv");
+        div1.innerText="정다정다정";
+        div1.style.width="200px"; 
+        div1.style.height="200px"; 
+        div1.style.backgroundColor="yellow";
+
+        //변수를 새로 만들고 싶지 않다면,
+        document.querySelector("#yourDiv").style.backgroundColor="pink";
+        document.querySelector("#yourDiv").style.width="200px";
+        document.querySelector("#yourDiv").style.height="200px";
+        document.querySelector("#yourDiv").style.border="2px solid darkorange";
+    </script>
+
+</body>
+</html>
