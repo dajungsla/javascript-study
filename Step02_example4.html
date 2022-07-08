@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example4.html</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
+    <script>
+        let i=0
+        document.querySelector("#changeBtn").addEventListener("click", function(){
+            let divs=document.querySelectorAll("div");
+            if(i<divs.length){
+                /*let i=0 : i변수는 전역에서 선언을 해야함,, 호로로롥 */
+                divs[i].innerText="하나씩 바꿔용";
+                i=i+1 /*여기까지만 코드하면 div의 인덱스가 10이후로 지나면 에러가 생김*/
+            }
+            else{alert("끝!");
+                i=0;}
+        });
+
+        document.querySelector("#changeBtn2").addEventListener("click", function(){
+            let divs=document.querySelectorAll("div");
+            if(i==divs.length){
+                alert('끝이다!');
+                return;
+            }
+                divs[i].innerText="호로록 바꿔용";
+                i=i+1 
+        });
+    </script>
+</body>
+</html>

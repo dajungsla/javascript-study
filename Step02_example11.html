@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example11.html</title>
+</head>
+<body>
+    <h3>가위 바위 보 게임</h3>
+    <select id="mySelect">
+        <option value="">나 : 선택</option> <!--value속성을 지우면, innerText가 value가 됨-->
+        <option value="0">나 : 가위</option>
+        <option value="1">나 : 바위</option>
+        <option value="2">나 : 보</option>
+    </select>
+    <strong>VS</strong>
+    <select id="comSelect">
+        <option value="">com :</option> <!--value속성을 지우면, innerText가 value가 됨-->
+        <option value="0">com : 가위</option>
+        <option value="1">com : 바위</option>
+        <option value="2">com : 보</option>
+    </select>
+<p id="result">  </p>
+    <script>
+        //나의 가위바위보 선택이 만들어지면, 컴퓨터의 랜덤 선택이 이루어지게 하기
+        document.querySelector("#mySelect").addEventListener("change", function(){
+            let val=document.querySelector("#mySelect").value;
+            let ranNum=Math.floor(Math.random()*3);
+            //let com=document.querySelector("#comSelect")[ranNum];
+            document.querySelector("#comSelect").value=ranNum;
+
+        if(val==0){ //만일 내가 가위를 냈을때 
+                if(ranNum==0){
+                    document.querySelector("#result").innerText="비겼습니다!!";
+                }else if(ranNum==1){
+                    document.querySelector("#result").innerText="졌습니다ㅠ_ㅠ";
+                }else if(ranNum==2){
+                    document.querySelector("#result").innerText="이겼습니다~!";
+                }
+            }else if(val==1){ // 아니면 내가 바위를 냈을때
+                if(ranNum==0){
+                    document.querySelector("#result").innerText="이겼습니다~!";
+                }else if(ranNum==1){
+                    document.querySelector("#result").innerText="비겼습니다!!";
+                }else if(ranNum==2){
+                    document.querySelector("#result").innerText="졌습니다ㅠ_ㅠ";
+                }
+            }else if(val==2){ // 아니면 내가 보를 냈을때
+                if(ranNum==0){
+                    document.querySelector("#result").innerText="졌습니다ㅠ_ㅠ";
+                }else if(ranNum==1){
+                    document.querySelector("#result").innerText="비겼습니다!!";
+                }else if(ranNum==2){
+                    document.querySelector("#result").innerText="이겼습니다~!";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

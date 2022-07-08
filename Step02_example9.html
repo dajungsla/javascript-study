@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">버튼</button>
+    <p id="result">fnfn</p> 
+
+    <button id="myBtn2">눌러봐</button>
+    <p id="result2">fnfn</p>
+    <script>
+        /*버튼을 눌렀을 때, 0또는 1또는 2의 숫자를 랜덤하게 얻어내서 
+        얻어낸 숫자를 p요소의 innerText로 출력*/
+
+        document.querySelector("#myBtn").addEventListener("click", function(){
+            let ran=Math.floor(Math.random()*3);
+            document.querySelector("#result").innerText=ran;
+        });
+
+        /*두번째 버튼을 눌렀을 때, "가위"or"바위"or"보" 중 하나의 문자열을 
+        랜덤하게 출력하기 */
+
+        document.querySelector("#myBtn2").addEventListener("click", function(){
+            let game=["가위","바위","보"];
+            let ran2=Math.floor(Math.random()*3);
+            document.querySelector("#result2").innerText=game[ran2];
+            //ran2의 랜덤한 숫자 출력을 game에서의 인덱스로 사용~
+        });
+
+
+    </script>   
+</body>
+</html>

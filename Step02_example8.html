@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example5.html</title>
+    <style>
+        .image{
+            width:100px;
+            height:100px;
+            border:2px solid green;
+        }
+        .image:hover{/*클래스명이 box인 요소에 마우스가 hover되었을 때 적용*/
+            background-color:pink;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+
+    <script>
+        let imgs=document.querySelectorAll(".image");
+
+        /*이미지가 확대된 상태인지 여부를 저장하는 배열 
+        (페이지 로딩시점에 모두 원래 상태=false값으로 boolean type data 입력)*/
+        let isLarges=[false, false, false, false, false];
+
+        /*클릭한 이미지의 width와 height를 각각 150px로 변경해보세요*/
+        for(let i=0; i<imgs.length; i++){
+            imgs[i].addEventListener("click", function(){
+                if(isLarges[i]==false){
+                imgs[i].style.width="200px";
+                imgs[i].style.height="200px";
+                //확대된 상태에서 상태값 변경
+                isLarges[i]=true;
+                return; //함수를 종료시켜주어야 함!
+            }
+            if(isLarges[i]==true){ /*if(isLarge==true)는 else로 써도 된다.*/
+                imgs[i].style.width="100px";
+                imgs[i].style.height="100px";
+                //축소된 상태에서 상태값 변경
+                isLarges[i]=false;
+                return;
+            }
+            });
+        };
+                
+
+        /*다시 크기를 원상태로 돌리려고 할 때, 상태값을 이용하여야 한다... 커진, 원래(2가지)*/
+        
+
+
+
+    </script>
+
+</body>
+</html>

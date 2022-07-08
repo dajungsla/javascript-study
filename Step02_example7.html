@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example6.html</title>
+    <style>
+        .image{
+            width:100px;
+            height:100px;
+            background-color:rgb(184, 238, 213);
+
+        }
+        .image:hover{
+            cursor:pointer;
+            border:1px solid rgb(252, 136, 136);
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/images/image.png" alt="" class="image">
+
+    <script>
+
+        //이미지의 상태 값을 관리할 변수
+        let cat=document.querySelectorAll(".image");
+        let isLarge=false;
+        cat[0].addEventListener("click", function(){
+            if(isLarge==false){
+                cat[0].style.width="200px";
+                cat[0].style.height="200px";
+                //확대된 상태에서 상태값 변경
+                isLarge=true;
+                return; //함수를 종료시켜주어야 함!
+            }
+            if(isLarge==true){ /*if(isLarge==true)는 else로 써도 된다.*/
+                cat[0].style.width="100px";
+                cat[0].style.height="100px";
+                //축소된 상태에서 상태값 변경
+                isLarge=false;
+                return;
+            }
+        });
+
+
+
+    </script>
+
+</body>
+</html>

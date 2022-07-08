@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example6.html</title>
+    <style>
+        .image{
+            width:100px;
+            height:100px;
+            background-color:rgb(184, 238, 213);
+            transition: all 0.5s ease-in-out
+        }
+        .image:hover{
+            cursor:pointer;
+            border:5px solid rgb(252, 136, 136);
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+    <img src="images/images/image.png" alt="" class="image">
+
+    <script>
+        let imgs=document.querySelectorAll(".image");
+
+        //이미지 크기 조정을 위한 각각의 이미지에 상태 값을 저장할 배열 만들기
+        let states=[];
+
+        /*클릭한 이미지의 width와 height를 각각 150px로 변경해보세요*/
+        for(let i=0; i<5; i++){
+            imgs[i].addEventListener("mouseover", function(){
+                imgs.querySelectorAll(".image")[i].style.width="150px";
+                imgs.querySelectorAll(".image")[i].style.height="150px";
+            });
+        }
+        /*다시 크기를 원상태로 돌리려고 할 때, 상태값을 이용하여야 한다... 커진, 원래(2가지)*/
+        
+
+
+
+    </script>
+
+</body>
+</html>
