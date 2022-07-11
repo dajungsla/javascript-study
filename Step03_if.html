@@ -12,13 +12,13 @@
     <script>
         let isLike=confirm("술을 좋아 합니까?"); //confirm은 확인&취소창이 팝업됨
 
-        //만일 isLike 가 true 이면
+        //만일 isLike 가 true 이면 (단일 if문 조건부 수행)
         if(isLike == true){
             document.querySelector("#result").innerText="술 한 잔 합시다!";}
         else{document.querySelector("#result").innerText="다음에 술 한 잔 해요!";}
         
 
-        //만일 좋아 한다면
+        //만일 좋아 한다면 (true이면 실행하고 아니면 실행하지 않음.)
         if(isLike){
             document.querySelector("#result").innerText="술한잔 합시다!";
         }
